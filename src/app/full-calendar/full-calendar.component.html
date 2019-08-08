@@ -1,0 +1,18 @@
+<!--<full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>-->
+<button (click)="updateEvents()" id="updateEvents">Update events</button>
+<button (click)="updateHeader()" id="updateHeader">Update header</button>
+<full-calendar
+  *ngIf="options"
+  #fullcalendar
+  [editable]="true"
+  [locale]="options.locale"
+  [events]="eventsModel"
+  [header]="options.header"
+  [customButtons]="options.customButtons"
+  [weekNumbers]="options.weekNumbers"
+  [buttonText]="options.buttonText"
+  (dateClick)="dateClick($event)"
+  (eventDragStop)="eventDragStop($event)"
+  [plugins]="options.plugins"
+  (eventClick)="eventClick($event)"
+></full-calendar>
